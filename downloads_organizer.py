@@ -1,12 +1,9 @@
 import shutil
+""" Imports Python's standard library module shutil, which provides high level file operations including moving, copying, and deleting files. """
 from pathlib import Path
+""" Imports the Path class from the pathlib module, which offers an object oriented approach to handling filesystem paths. """
 
-# -------------------------------------------------------
-# File categories mapped to corresponding file extensions.
-# Each key represents a target directory name that will be
-# created under the Downloads folder. The associated list
-# defines which file extensions belong in that directory.
-# -------------------------------------------------------
+
 FILE_CATEGORIES = {
     "Images": [".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff", ".webp", ".heic"],
     "Documents": [
@@ -22,22 +19,12 @@ FILE_CATEGORIES = {
     ],
     "Installers": [".exe", ".msi", ".dmg", ".pkg", ".deb"],
 }
-
+""" Defines a dictionary where the key is the folder name that will be created and the value is a list of file extensions associated with that category. This acts as the mapping logic for categorization. """
 
 def get_category(file_path: Path) -> str:
-    """
-    Determine the appropriate category directory for the given file based on its extension.
-
-    Parameters
-    ----------
-    file_path : Path
-        The file path to evaluate.
-
-    Returns
-    -------
-    str
-        The name of the category directory, or 'Other' if the extension is unrecognized.
-    """
+    
+    """ Begins a function that accepts a Path object, extracts its file extension, and determines the corresponding category folder name."""
+    
     ext = file_path.suffix.lower()
 
     for category, extensions in FILE_CATEGORIES.items():
@@ -86,3 +73,4 @@ if __name__ == "__main__":
     # Default target directory is the current user's Downloads folder
     downloads_folder = Path.home() / "Downloads"
     clean_folder(downloads_folder)
+
