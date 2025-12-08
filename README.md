@@ -13,14 +13,16 @@ It looks at each file in the Downloads folder and moves it into a subfolder base
 - `Installers`
 - `Other`
 
-## How to use
+## How to use 
 
-1. Install Python 3.
-2. Save `downloads_organizer.py` to a folder, for example `Desktop/downloads-organizer`.
-3. Open Command Prompt.
-4. Go to the folder:
+(These steps assume a Windows interface and that you already have Python 3 installed)
+
+1. Save `downloads_organizer.py` to a folder, for example `Desktop/downloads-organizer`.
+2. Open Command Prompt.
+3. Go to the folder:
    `cd %HOMEPATH%\Desktop\downloads-organizer`
-5. Run the script:
+4. Run the script:
    `python downloads_organizer.py`
 
 The script will organize the files in your Downloads folder into category subfolders.
+
